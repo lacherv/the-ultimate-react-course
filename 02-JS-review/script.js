@@ -152,14 +152,8 @@ book;
 // const author = book.author;
 
 // Object destructing
-const {
-  title,
-  author,
-  pages,
-  publicationDate,
-  genres,
-  hasMovieAdaptation,
-} = book;
+const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
+  book;
 
 console.log(title, author, genres);
 
@@ -186,5 +180,12 @@ const updatedBook = {
 };
 updatedBook;
 // template literals
-const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in ${publicationDate.split('-')[0]}`;
+const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in ${
+  publicationDate.split("-")[0]
+}.The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
 summary;
+// Terniary operations
+const pagesRange =
+  pages > 1000 ? "over a thousand pages" : "less than a thousand pages";
+pagesRange;
+console.log(`The book bas ${pagesRange} pages`);
