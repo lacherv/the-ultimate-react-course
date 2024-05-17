@@ -144,7 +144,6 @@ function getBook(id) {
 }
 
 // Destructuring
-
 const book = getBook(2);
 book;
 
@@ -201,3 +200,27 @@ const pagesRange =
   pages > 1000 ? "over a thousand pages" : "less than a thousand pages";
 pagesRange;
 console.log(`The book bas ${pagesRange} pages`);
+
+// Short circuit
+console.log(true && "The book");
+console.log(false && "The book");
+console.log(hasMovieAdaptation && "This has a movie");
+
+// fasly: 0, '', null
+console.log("lacherv" && "the contributor");
+console.log(0 && "The editor");
+
+console.log(true || "The book");
+console.log(false || "The book");
+
+console.log(book.translations.spanish);
+const spanishTranslation = book.translations.spanish || "NOT TRANSLATED";
+spanishTranslation;
+
+console.log(book.reviews.librarything.reviewsCount);
+const countWrong = book.reviews.librarything.reviewsCount || "no data";
+countWrong;
+
+// coalescing operator
+const count = book.reviews.librarything.reviewsCount ?? "no data";
+count;
