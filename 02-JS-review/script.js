@@ -142,7 +142,7 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
-
+/*
 // Destructuring
 const book = getBook(3);
 book;
@@ -234,3 +234,28 @@ libraryThing;
 };
 
 console.log(getTotalReviewsCount(book));
+ */
+
+const getTotalReviewsCount = (book) => {
+  const goodRead = book.reviews.goodreads.reviewsCount;
+  //Optional chaining
+  const libraryThing = book.reviews?.librarything?.reviewsCount ?? 0;
+  libraryThing;
+  return goodRead + libraryThing;
+};
+
+const books = getBooks();
+// Array Map Methods
+const twice = [1, 2, 3, 4, 5].map((el) => el * 2);
+console.log(twice);
+
+const titles = books.map((book) => book.title);
+titles;
+
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+  reviewsCount: getTotalReviewsCount(book),
+}));
+
+essentialData;
