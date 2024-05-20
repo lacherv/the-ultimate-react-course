@@ -234,7 +234,7 @@ libraryThing;
 };
 
 console.log(getTotalReviewsCount(book));
- */
+
 
 const getTotalReviewsCount = (book) => {
   const goodRead = book.reviews.goodreads.reviewsCount;
@@ -295,3 +295,10 @@ const booksAfterUpdate = booksAfterDelete.map((book) =>
   book.id === 1 ? { ...book, pages: 1122 } : book
 );
 booksAfterUpdate;
+ */
+
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+console.log("john");
