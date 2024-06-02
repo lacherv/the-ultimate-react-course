@@ -86,19 +86,6 @@ function Menu() {
       ) : (
         <p>We're still working on our menu. Please come back later :) </p>
       )}
-
-      {/* <Pizza
-        name="Pizza Prosciutto"
-        ingredients="Tomato, mozarella, ham, aragula, and burrata cheese"
-        photoName="pizzas/prosciutto.jpg"
-        price={10}
-      />
-      <Pizza
-        name="Pizza Funghi"
-        ingredients="Tomato, mushrooms"
-        price={12}
-        photoName="pizzas/funghi.jpg"
-      /> */}
     </div>
   );
 }
@@ -106,6 +93,9 @@ function Menu() {
 // Pizza Component
 function Pizza(props) {
   console.log(props);
+
+  if (props.pizzaObject.soldOut) return null;
+
   return (
     <li className="pizza">
       <img src={props.pizzaObject.photoName} alt={props.pizzaObject.name} />
